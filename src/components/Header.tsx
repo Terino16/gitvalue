@@ -2,16 +2,11 @@
 import React from "react";
 import { ModeToggle } from "@/app/Toggle";
 import Image from "next/image";
-import {
-  UserButton,
-  SignInButton,
-  SignOutButton,
-  useSession,
-} from "@clerk/nextjs";
+
 import Logo from "@/components/Logo";
 import Link from "next/link";
 const Header = () => {
-  const { isSignedIn } = useSession();
+
   return (
     <div className="flex justify-between items-center px-8 py-4">
       <div >
@@ -22,9 +17,7 @@ const Header = () => {
       </div>
 
       <div className="  flex  items-center gap-5">
-        <span>
-        {isSignedIn ? <SignOutButton /> : <SignInButton />}
-        </span>
+       
        
 
         <ModeToggle />
